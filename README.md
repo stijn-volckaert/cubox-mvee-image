@@ -12,12 +12,16 @@ Download the latest CuBox-i OS image here:
 https://images.solid-build.xyz/IMX6/Debian/
 
 Or simply:
-`wget https://images.solid-build.xyz/IMX6/Debian/sr-imx6-debian-jessie-cli-20171108.img.xz`
+```
+wget https://images.solid-build.xyz/IMX6/Debian/sr-imx6-debian-jessie-cli-20171108.img.xz
+```
 
 Now look up the device name for the microSD card. You do *NOT* have to mount the card to do this. Instead, simply look up the device using `sudo gparted` or fdisk. On my pc, the device name is /dev/sdc/
 
 Now, flash the image onto the card using:
-`xzcat /path/to/image/sr-imx6-debian-jessie-cli-20171108.img.xz | dd of=/dev/sdX`
+```
+xzcat /path/to/image/sr-imx6-debian-jessie-cli-20171108.img.xz | dd of=/dev/sdX
+```
 
 Replace X by the device number.
 
@@ -32,7 +36,9 @@ mount -t ext4 /dev/sdc1 /home/stijn/cuboxsdcard
 ## Getting the updated kernel sources and preparing for cross-compilation
 
 Get the latest CuBox-i kernel sources directly from GitHub using:
-`git clone https://github.com/SolidRun/linux-fslc`
+```
+git clone https://github.com/SolidRun/linux-fslc
+```
 
 Next, set up a setupenv.sh script that looks like this:
 
