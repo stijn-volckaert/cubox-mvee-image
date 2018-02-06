@@ -20,6 +20,8 @@ Now look up the device name for the microSD card. You do *NOT* have to mount the
 
 Now, flash the image onto the card using:
 ```
+# replace /dev/sdX by the device name for your microSD card.
+# make sure you double check the device name as this will erase the contents of the device.
 xzcat /path/to/image/sr-imx6-debian-jessie-cli-20171108.img.xz | dd of=/dev/sdX
 ```
 
@@ -27,10 +29,12 @@ Replace X by the device number.
 
 ## Mounting the microSD card
 
-Now, mount the microSD card into your file system. This time, you will need the partition number too, which is 1 in my case:
+Now, mount the microSD card into your file system. This time, you will need the partition number too:
 ```
-mkdir -p /home/stijn/cuboxsdcard/
-mount -t ext4 /dev/sdc1 /home/stijn/cuboxsdcard
+mkdir -p /path/to/sdcard/
+# replace sdXX by the partition name. If your device name was /dev/sdc, 
+# then the partition name is probably /dev/sdc1. Once again, use gparted or fdisk to double check
+mount -t ext4 /dev/sdXX /path/to/sdcard/
 ```
 
 ## Getting the updated kernel sources and preparing for cross-compilation
@@ -45,8 +49,8 @@ Next, set up a setupenv.sh script that looks like this:
 ```
 export ARCH="arm"
 export CROSS_COMPILE="/usr/bin/arm-linux-gnueabi-"
-export INSTALL_PATH="/home/stijn/cuboxsdcard/boot"
-export INSTALL_MOD_PATH="/home/stijn/cuboxsdcard"
+export INSTALL_PATH="/path/to/sdcard/boot"
+export INSTALL_MOD_PATH="/path/to/sdcard"
 ```
 
 INSTALL_MOD_PATH should be the root of the microSD card's file system.
