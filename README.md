@@ -24,7 +24,7 @@ Replace X by the device number.
 ## Mounting the microSD card
 
 Now, mount the microSD card into your file system. This time, you will need the partition number too, which is 1 in my case:
-````
+```
 mkdir -p /home/stijn/cuboxsdcard/
 mount -t ext4 /dev/sdc1 /home/stijn/cuboxsdcard
 ```
