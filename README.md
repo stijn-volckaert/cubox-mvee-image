@@ -27,6 +27,8 @@ xzcat /path/to/image/sr-imx6-debian-jessie-cli-20171108.img.xz | dd of=/dev/sdX
 
 Replace X by the device number.
 
+Next, you might want to grow the size of the primary partition using gparted.
+
 ## Mounting the microSD card
 
 Now, mount the microSD card into your file system. This time, you will need the partition number too:
