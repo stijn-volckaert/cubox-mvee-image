@@ -64,7 +64,7 @@ if [ -x ~/bin/${INSTALLKERNEL} ]; then exec ~/bin/${INSTALLKERNEL} "$@"; fi
 if [ -x /sbin/${INSTALLKERNEL} ]; then exec /sbin/${INSTALLKERNEL} "$@"; fi
 ```
 
-We need this because otherwise your distro will try to package up the kernel we're going to compile.
+We need to comment these lines out because otherwise your distro will try to package up the kernel we're going to compile.
 It might also try to update your boot loader.
 We don't want any of that because we're going to install the kernel directly onto the microSD card.
 
