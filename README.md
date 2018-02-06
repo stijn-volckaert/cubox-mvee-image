@@ -99,13 +99,13 @@ source ../setupenv.sh
 Now, you can install the zImage using:
 ```
 make zinstall
+cp .config /path/to/sdcard/boot/config-<kernelver> # you can see the kernel version in the output of the make zinstall command
 make modules_install
 make dtbs_install
 ```
 
 These commands install the following files:
 * /path/to/sdcard/boot/vmlinux-<kernelver>
-* /path/to/sdcard/boot/config-<kernelver>
 * /path/to/sdcard/boot/System.map-<kernelver>
 * /path/to/sdcard/boot/dtbs/<kernelver>
 * /path/to/sdcard/lib/modules/*
