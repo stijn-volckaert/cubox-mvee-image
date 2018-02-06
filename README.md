@@ -79,6 +79,7 @@ source ../setupenv.sh
 make imx_v7_cbi_hb_defconfig
 make -j 8 zImage imx6q-cubox-i.dtb imx6dl-cubox-i.dtb imx6dl-hummingboard.dtb imx6q-hummingboard.dtb
 make -j 8 modules
+make dtbs
 ```
 
 ## Installing the kernel
